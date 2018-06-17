@@ -19,15 +19,19 @@ Simple module to run ansible-playbook on remote hosts.
 
 ## Parameters
  - playbook
+
  /path/to/file on remote machine.
 
  - ansible-repo-path (Optional)
+
  /path/to/directory to your ansible's root.
 
  - tags(Optional)
+
  your tags for ansible-playbook command.
 
  - verbose
+ 
  if True adds '-vvv' key to ansible-playbook command.
 
 # Author
