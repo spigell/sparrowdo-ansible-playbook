@@ -1,0 +1,27 @@
+{
+  "authors" : [
+    "Spigell"
+  ],
+  "build-depends" : [ ],
+  "depends" : [
+    "Sparrowdo",
+    "YAMLish"
+  ],
+  "description" : "Sparrowdo module to run ansible-playbook on remote hosts",
+  "license" : "Artistic-2.0",
+  "name" : "Sparrowdo::Ansible::Playbook",
+  "perl" : "6.*",
+  "provides" : {
+    "Sparrowdo::Ansible::Playbook" : "lib/Sparrowdo/Ansible/Playbook.pm6"
+  },
+  "resources" : [ ],
+  "source-type" : "git",
+  "source-url" : "https://github.com/spigell/sparrowdo-ansible-playbook.git",
+  "support" : {
+    "bugtracker" : "https://github.com/spigell/sparrowdo-ansible-playbook/issues",
+    "source" : "https://github.com/spigell/sparrowdo-ansible-playbook.git"
+  },
+  "tags" : [ ],
+  "test-depends" : [ ],
+  "version" : "0.0.1"
+}
