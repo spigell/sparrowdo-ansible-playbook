@@ -9,12 +9,15 @@ Simple module to run ansible-playbook on remote hosts.
 # USAGE
 
     $ cat sparrowfile
-
     module_run 'Ansible::Playbook', %(
-      playbook => '/home/vagrant/coffeenet/masterhosts.yml',
-      tags => 'sparrow',
-      ansible-repo-path => '/home/vagrant/coffeenet',
-      verbose => True
+      playbook => '/ansible/infra.yml',
+      inventory => 'inventories/staging/hosts',
+      tags => config<tags>,
+      verbose => config<verbose>,
+      vars => %(
+        docker_root_dir => '/tmp',
+        virtual => 'yes'
+      )
     );
 
 ## Parameters
@@ -29,7 +32,11 @@ Simple module to run ansible-playbook on remote hosts.
  - inventory (Optional)
 
  /path/to/file to your ansible's inventory
- 
+
+ - vars
+
+ Hash for extra vars.
+
  - tags(Optional)
 
  your tags for ansible-playbook command.

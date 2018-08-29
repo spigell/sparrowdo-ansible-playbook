@@ -64,7 +64,7 @@ our sub tasks (%args) {
   $ansible-playbook-cmd ~= qq { cd $root_dir && };
   $ansible-playbook-cmd ~= qq { ansible-playbook -i $inventory_file $playbook_file };
   $ansible-playbook-cmd ~= qq { --tags=%args<tags> } if %args<tags>;
-  $ansible-playbook-cmd ~= qq { --limit $hosts\[0\] } if %args<tags>;
+  $ansible-playbook-cmd ~= qq { --limit $hosts\[0\] };
   $ansible-playbook-cmd ~= qq { -c local };
   $ansible-playbook-cmd ~= ' -vvv' if %args<verbose>;
 
