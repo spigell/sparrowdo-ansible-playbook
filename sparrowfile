@@ -1,0 +1,7 @@
+
+module_run 'Ansible::Playbook', %(
+  playbook => '/ansible/infra.yml',
+  inventory => 'inventories/staging/hosts',
+  tags => config<tags>,
+  verbose => config<verbose>,
+);

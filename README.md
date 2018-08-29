@@ -26,11 +26,15 @@ Simple module to run ansible-playbook on remote hosts.
 
  /path/to/directory to your ansible's root.
 
+ - inventory (Optional)
+
+ /path/to/file to your ansible's inventory
+ 
  - tags(Optional)
 
  your tags for ansible-playbook command.
 
- - verbose
+ - verbose(Optional)
  
  if True adds '-vvv' key to ansible-playbook command.
 
