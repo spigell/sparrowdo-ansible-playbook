@@ -4,4 +4,8 @@ module_run 'Ansible::Playbook', %(
   inventory => 'inventories/staging/hosts',
   tags => config<tags>,
   verbose => config<verbose>,
+  vars => %(
+    docker_root_dir => '/tmp',
+    virtual => 'yes'
+  )
 );

@@ -4,3 +4,4 @@
   - added -c 'local' parameter to cmd
   - added --limit <your-hosts>[0] to cmd
   - added parameter inventory
+  - added support of --extra-vars

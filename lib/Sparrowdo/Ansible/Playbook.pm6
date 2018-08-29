@@ -58,6 +58,7 @@ our sub tasks (%args) {
     $inventory_file = %args<inventory>;
   }
 
+
   my $ansible-playbook-cmd = '';
 
   $ansible-playbook-cmd ~= qq { cd $root_dir && };
@@ -66,6 +67,12 @@ our sub tasks (%args) {
   $ansible-playbook-cmd ~= qq { --limit $hosts\[0\] } if %args<tags>;
   $ansible-playbook-cmd ~= qq { -c local };
   $ansible-playbook-cmd ~= ' -vvv' if %args<verbose>;
+
+  if %args<vars> {
+    for %args<vars>.kv -> $key, $val {
+      $ansible-playbook-cmd ~= qq { -e '$key=$val' }
+    }
+  }
 
 
   bash "$ansible-playbook-cmd", %(
